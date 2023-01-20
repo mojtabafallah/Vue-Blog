@@ -12,8 +12,12 @@ export default {
   name: "App",
   components: {MainHeader}
 }
+
 </script>
 
 <style scoped>
-
+@import 'public/style.css';
+*{
+  font-family: IRANSans;
+}
 </style>
