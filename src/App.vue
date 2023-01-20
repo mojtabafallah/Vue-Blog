@@ -1,10 +1,16 @@
 <template>
-<router-view></router-view>
+  <MainHeader></MainHeader>
+  <div class="container">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
+import MainHeader from "./components/global/MainHeader.vue";
+
 export default {
-  name: "App"
+  name: "App",
+  components: {MainHeader}
 }
 </script>
 
