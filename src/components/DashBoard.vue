@@ -1,8 +1,8 @@
 <template>
   <section-header></section-header>
-
   <div class="row">
     <div class="col-md-8 col-sm-12">
+      <custom-button title="افزودن مقاله" classes="btn-primary mb-2 mt-2" @click="onClick"></custom-button>
       <h2>مقالات</h2>
       <table class="table table-bordered table-dark table-striped table-hover text-center">
         <thead>
@@ -62,7 +62,7 @@
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td><img src="{{user.avatar}}"></td>
-          <td>{{user.username}}</td>
+          <td>{{ user.username }}</td>
           <td> {{ user.email }}</td>
           <td> {{ user.role }}</td>
           <td>
@@ -80,49 +80,53 @@
 
 </template>
 
-<script>
+<script setup>
 import SectionHeader from "./global/SectionHeader.vue";
+import CustomButton from "./global/CustomButton.vue"
+import {useRouter} from "vue-router";
 
-export default {
-  name: "DashBoard",
-  data() {
-    return {
-      posts: [
-        {
-          id: '1',
-          title: 'عنوان اول',
-          thumbnail: '1.jpg',
-          author: {
-            id: '1',
-            name: 'مجتبی فلاح',
-            avatar: '2.jpg'
-          }
-        },
-        {
-          id: '1',
-          title: 'عنوان اول',
-          thumbnail: '1.jpg',
-          author: {
-            id: '1',
-            name: 'مجتبی فلاح',
-            avatar: '2.jpg'
-          }
-        },
-      ],
-      users: [
-        {
-          id: '1',
-          name: 'مجتبی',
-          avatar: '1.jpg',
-          username: 'mojtaba.fallah',
-          email: 'mojtaba.fallah1373@gmail.com',
-          role: 'مدیر'
-        }
-      ]
+
+const router = useRouter();
+
+
+const posts = [
+  {
+    id: '1',
+    title: 'عنوان اول',
+    thumbnail: '1.jpg',
+    author: {
+      id: '1',
+      name: 'مجتبی فلاح',
+      avatar: '2.jpg'
     }
   },
-  components: {SectionHeader}
+  {
+    id: '1',
+    title: 'عنوان اول',
+    thumbnail: '1.jpg',
+    author: {
+      id: '1',
+      name: 'مجتبی فلاح',
+      avatar: '2.jpg'
+    }
+  },
+];
+const users = [
+  {
+    id: '1',
+    name: 'مجتبی',
+    avatar: '1.jpg',
+    username: 'mojtaba.fallah',
+    email: 'mojtaba.fallah1373@gmail.com',
+    role: 'مدیر'
+  }
+];
+
+const onClick = () => {
+  console.log(router);
+  router.push("newPost");
 }
+
 </script>
 
 <style scoped>

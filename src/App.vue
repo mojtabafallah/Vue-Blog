@@ -2,6 +2,8 @@
   <MainHeader></MainHeader>
   <div class="container">
     <router-view></router-view>
+
+    <button @click="invokeSave">Save</button>
   </div>
 </template>
 
@@ -10,7 +12,8 @@ import MainHeader from "./components/global/MainHeader.vue";
 
 export default {
   name: "App",
-  components: {MainHeader}
+  components: {MainHeader},
+
 }
 
 </script>

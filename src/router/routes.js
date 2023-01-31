@@ -1,22 +1,24 @@
-import dashBoard from "../components/DashBoard.vue";
-import ShowAuthor from "../components/Author/ShowAuthor.vue";
-import SinglePost from "../components/Post/SinglePost.vue";
-
 const routes = [
     {
         path: '/',
-        component: dashBoard,
+        component: ()=> import("../components/DashBoard.vue"),
         name: 'dashboard'
     },
     {
         path: '/:id/showAuthor',
         name: 'showAuthor',
-        component: ShowAuthor
+        component: ()=> import("../components/Author/ShowAuthor.vue")
     },
     {
         path: '/:id/showPost',
         name: 'showPost',
-        component: SinglePost
+        component: () => import("../components/Post/SinglePost.vue")
+    },
+    {
+        path: "/newPost",
+        name: 'newPost',
+        component: () => import("../components/Post/NewPost.vue")
+        
     }
 ];
 
