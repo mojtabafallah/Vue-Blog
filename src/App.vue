@@ -2,8 +2,6 @@
   <MainHeader></MainHeader>
   <div class="container">
     <router-view></router-view>
-
-    <button @click="invokeSave">Save</button>
   </div>
 </template>
 
